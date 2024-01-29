@@ -30,6 +30,26 @@ var globalUtilityQueue: DispatchQueue {
 
 class Utils {
     
+    /// Get TimeStamp
+    /// - Returns: String
+    class func getTimeStamp() -> String {
+        return String(format: "%f", Date().timeIntervalSince1970)
+    }
+    
+    /// Returns timeStamp in "yyyy-MM-dd'T'HH:mm:ssZ" format
+    /// - Returns: String
+    class func debugLogTimeStamp() -> String {
+        if let timeStampDouble = Double(Utils.getTimeStamp()) {
+            let date = NSDate(timeIntervalSince1970: timeStampDouble)
+            let dateFormatterGet = DateFormatter()
+            dateFormatterGet.timeZone = TimeZone.current
+            //dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSS"
+            return dateFormatterGet.string(from: date as Date)
+        }
+        return ""
+    }
+    
     //Implement Delay before execution
     class func delayExecution(_ delayInSeconds:Double, closure:@escaping ()->()) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
@@ -53,9 +73,7 @@ class Utils {
 ///   - function: Name of function message is coming from
 ///   - line: Line number message is coming from
 public func logDebugMessage(message: String, error: NSError? = nil, file: String = "", function: String = "", line: String = "") {
-#if BETA
     guard message.isEmpty == false else { return }
-    guard AppSession.shared.logInBeta else { return }
     var log = ""
     let logImagePrefix = (error == nil) ? "✅" : "⛔"
     let logPrefix = "\(logImagePrefix)\(AppConstants.LogPrefix)[\(Utils.debugLogTimeStamp())]: "
@@ -81,7 +99,6 @@ public func logDebugMessage(message: String, error: NSError? = nil, file: String
             print("\(logPrefix)\(str)")
         }
     }
-#endif
 }
 
 /// Logs Error Message to Console
@@ -92,8 +109,6 @@ public func logDebugMessage(message: String, error: NSError? = nil, file: String
 ///   - function: Name of function error message is coming from
 ///   - line: Line number error message is coming from
 public func logDebugError(message: String, error: NSError? = nil, file: String = "", function: String = "", line: String = "") {
-#if BETA
-    guard AppSession.shared.logInBeta else { return }
     var log = ""
     let logPrefix = "⛔\(AppConstants.LogErrorPrefix)[\(Utils.debugLogTimeStamp())]: "
     let messageString = message.replacingOccurrences(of: "%", with: "%%")
@@ -118,7 +133,6 @@ public func logDebugError(message: String, error: NSError? = nil, file: String =
             print("\(logPrefix)\(str)")
         }
     }
-#endif
 }
 
 func splitByLength(str: String, length: Int) -> [String] {
