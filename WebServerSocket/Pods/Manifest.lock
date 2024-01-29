@@ -1,24 +1,28 @@
 PODS:
   - CocoaAsyncSocket (7.6.5)
   - HTTPParserC (2.9.4)
+  - Starscream (4.0.6)
   - Telegraph (0.30.0):
     - CocoaAsyncSocket (~> 7.6)
     - HTTPParserC (~> 2.9)
 
 DEPENDENCIES:
+  - Starscream (~> 4.0.6)
   - Telegraph
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs:
     - CocoaAsyncSocket
     - HTTPParserC
+    - Starscream
     - Telegraph
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   HTTPParserC: aea14c3d2d4ac5beb3988781daa36dfa62e0d9ef
+  Starscream: fb2c4510bebf908c62bd383bcf05e673720e91fd
   Telegraph: 12576b119324138e4929792af9e5a1085c2ecbc1
 
-PODFILE CHECKSUM: e6adb861e686eeebf0a333b62dbb0b484abd2ce1
+PODFILE CHECKSUM: 1fa11319081751348547e690b7c0fc2f0a97f804
 
 COCOAPODS: 1.10.2

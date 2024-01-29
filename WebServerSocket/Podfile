@@ -5,6 +5,9 @@ platform :ios, '17.0'
 def shared_pods
   # Telegraph
   pod 'Telegraph'
+  
+  # Starscream
+  pod 'Starscream', '~> 4.0.6'
 end
 
 target 'WebServerSocket' do

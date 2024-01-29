@@ -17,6 +17,33 @@
 		402AB4F62B680550000713EF /* WebServerSocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB4F52B680550000713EF /* WebServerSocketTests.swift */; };
 		402AB5002B680550000713EF /* WebServerSocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB4FF2B680550000713EF /* WebServerSocketUITests.swift */; };
 		402AB5022B680550000713EF /* WebServerSocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5012B680550000713EF /* WebServerSocketUITestsLaunchTests.swift */; };
+		402AB5102B681673000713EF /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB50F2B681673000713EF /* WebServer.swift */; };
+		402AB5132B6816D3000713EF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5122B6816D3000713EF /* Utils.swift */; };
+		402AB5162B6817C5000713EF /* AppWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5152B6817C5000713EF /* AppWebSocket.swift */; };
+		402AB5192B68196A000713EF /* AppEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5182B68196A000713EF /* AppEnums.swift */; };
+		402AB51C2B681BF9000713EF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB51B2B681BF9000713EF /* WebViewController.swift */; };
+		402AB51F2B681C47000713EF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB51E2B681C47000713EF /* BaseViewController.swift */; };
+		402AB5212B681CE8000713EF /* WebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5202B681CE8000713EF /* WebViewPresenter.swift */; };
+		402AB5232B681D05000713EF /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5222B681D05000713EF /* BasePresenter.swift */; };
+		402AB5252B681DE4000713EF /* CookieUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5242B681DE4000713EF /* CookieUtils.swift */; };
+		402AB5272B681E93000713EF /* WebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5262B681E93000713EF /* WebViewManager.swift */; };
+		402AB5292B681EDE000713EF /* BaseViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5282B681EDE000713EF /* BaseViewManager.swift */; };
+		402AB52C2B68201C000713EF /* WebViewControllerUIExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB52B2B68201C000713EF /* WebViewControllerUIExt.swift */; };
+		402AB52E2B68207A000713EF /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB52D2B68207A000713EF /* GlobalConstants.swift */; };
+		402AB5342B68221A000713EF /* DotComWebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5302B682219000713EF /* DotComWebViewManager.swift */; };
+		402AB5352B68221A000713EF /* DotComWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5312B68221A000713EF /* DotComWebViewController.swift */; };
+		402AB5362B68221A000713EF /* DotComWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402AB5322B68221A000713EF /* DotComWebView.storyboard */; };
+		402AB5372B68221A000713EF /* DotComWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5332B68221A000713EF /* DotComWebViewPresenter.swift */; };
+		402AB53A2B6823E4000713EF /* ChessDotComWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5392B6823E4000713EF /* ChessDotComWebViewPresenter.swift */; };
+		402AB53D2B682595000713EF /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB53C2B682595000713EF /* UINavigationController.swift */; };
+		402AB5422B682A8E000713EF /* socketScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 402AB5412B682A8E000713EF /* socketScript.js */; };
+		402AB5452B682D0F000713EF /* DotComManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5442B682D0F000713EF /* DotComManager.swift */; };
+		402AB5492B682DD6000713EF /* DotComManagerParseExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5482B682DD6000713EF /* DotComManagerParseExt.swift */; };
+		402AB54C2B682E6B000713EF /* MonitorMsgEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB54B2B682E6B000713EF /* MonitorMsgEntity.swift */; };
+		402AB54E2B682EBA000713EF /* GlobalTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB54D2B682EBA000713EF /* GlobalTypeAliases.swift */; };
+		402AB5502B682FA2000713EF /* WKScriptMessageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB54F2B682FA2000713EF /* WKScriptMessageExtension.swift */; };
+		402AB5522B682FE3000713EF /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5512B682FE3000713EF /* DictionaryExtension.swift */; };
+		402AB5542B68303F000713EF /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5532B68303F000713EF /* CodableExtension.swift */; };
 		4DA052F2F1DE826E97ADB3EF /* libPods-WebServerSocketUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 930B721217FB3C7CF54239E4 /* libPods-WebServerSocketUITests.a */; };
 		EE340E8E8333AE35D5D979CD /* Pods_WebServerSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F271169486CE23203ED256 /* Pods_WebServerSocket.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +81,33 @@
 		402AB4FB2B680550000713EF /* WebServerSocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebServerSocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		402AB4FF2B680550000713EF /* WebServerSocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServerSocketUITests.swift; sourceTree = "<group>"; };
 		402AB5012B680550000713EF /* WebServerSocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServerSocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		402AB50F2B681673000713EF /* WebServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServer.swift; sourceTree = "<group>"; };
+		402AB5122B6816D3000713EF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		402AB5152B6817C5000713EF /* AppWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebSocket.swift; sourceTree = "<group>"; };
+		402AB5182B68196A000713EF /* AppEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnums.swift; sourceTree = "<group>"; };
+		402AB51B2B681BF9000713EF /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		402AB51E2B681C47000713EF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		402AB5202B681CE8000713EF /* WebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPresenter.swift; sourceTree = "<group>"; };
+		402AB5222B681D05000713EF /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		402AB5242B681DE4000713EF /* CookieUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieUtils.swift; sourceTree = "<group>"; };
+		402AB5262B681E93000713EF /* WebViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewManager.swift; sourceTree = "<group>"; };
+		402AB5282B681EDE000713EF /* BaseViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewManager.swift; sourceTree = "<group>"; };
+		402AB52B2B68201C000713EF /* WebViewControllerUIExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewControllerUIExt.swift; sourceTree = "<group>"; };
+		402AB52D2B68207A000713EF /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		402AB5302B682219000713EF /* DotComWebViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotComWebViewManager.swift; sourceTree = "<group>"; };
+		402AB5312B68221A000713EF /* DotComWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotComWebViewController.swift; sourceTree = "<group>"; };
+		402AB5322B68221A000713EF /* DotComWebView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DotComWebView.storyboard; sourceTree = "<group>"; };
+		402AB5332B68221A000713EF /* DotComWebViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotComWebViewPresenter.swift; sourceTree = "<group>"; };
+		402AB5392B6823E4000713EF /* ChessDotComWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessDotComWebViewPresenter.swift; sourceTree = "<group>"; };
+		402AB53C2B682595000713EF /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		402AB5412B682A8E000713EF /* socketScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = socketScript.js; sourceTree = "<group>"; };
+		402AB5442B682D0F000713EF /* DotComManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotComManager.swift; sourceTree = "<group>"; };
+		402AB5482B682DD6000713EF /* DotComManagerParseExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotComManagerParseExt.swift; sourceTree = "<group>"; };
+		402AB54B2B682E6B000713EF /* MonitorMsgEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorMsgEntity.swift; sourceTree = "<group>"; };
+		402AB54D2B682EBA000713EF /* GlobalTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTypeAliases.swift; sourceTree = "<group>"; };
+		402AB54F2B682FA2000713EF /* WKScriptMessageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKScriptMessageExtension.swift; sourceTree = "<group>"; };
+		402AB5512B682FE3000713EF /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		402AB5532B68303F000713EF /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
 		73F271169486CE23203ED256 /* Pods_WebServerSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebServerSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89394E7C7FE0E7BD21460ED6 /* libPods-WebServerSocketTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebServerSocketTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBB799CECC54ADA1773427F /* Pods-WebServerSocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebServerSocket.debug.xcconfig"; path = "Target Support Files/Pods-WebServerSocket/Pods-WebServerSocket.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +155,6 @@
 				C500FB3ED9839496AC7863C1 /* Pods-WebServerSocketUITests.debug.xcconfig */,
 				05CE6666CD3A97EB01652E7B /* Pods-WebServerSocketUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,6 +183,17 @@
 		402AB4DD2B68054E000713EF /* WebServerSocket */ = {
 			isa = PBXGroup;
 			children = (
+				402AB54A2B682E58000713EF /* Entities */,
+				402AB5432B682CF9000713EF /* Singleton */,
+				402AB5402B682A77000713EF /* Script */,
+				402AB53B2B68257B000713EF /* Global Extensions */,
+				402AB52F2B6821FA000713EF /* WebView */,
+				402AB51D2B681C31000713EF /* BaseClasses */,
+				402AB51A2B681BBD000713EF /* WebViewKit */,
+				402AB5172B681959000713EF /* Enums */,
+				402AB5142B6817A9000713EF /* WebSocket */,
+				402AB5112B6816C5000713EF /* Utils */,
+				402AB50E2B681658000713EF /* WebServer */,
 				402AB4DE2B68054E000713EF /* AppDelegate.swift */,
 				402AB4E02B68054E000713EF /* SceneDelegate.swift */,
 				402AB4E22B68054E000713EF /* ViewController.swift */,
@@ -156,6 +220,142 @@
 				402AB5012B680550000713EF /* WebServerSocketUITestsLaunchTests.swift */,
 			);
 			path = WebServerSocketUITests;
+			sourceTree = "<group>";
+		};
+		402AB50E2B681658000713EF /* WebServer */ = {
+			isa = PBXGroup;
+			children = (
+				402AB50F2B681673000713EF /* WebServer.swift */,
+			);
+			path = WebServer;
+			sourceTree = "<group>";
+		};
+		402AB5112B6816C5000713EF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				402AB5122B6816D3000713EF /* Utils.swift */,
+				402AB5242B681DE4000713EF /* CookieUtils.swift */,
+				402AB52D2B68207A000713EF /* GlobalConstants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		402AB5142B6817A9000713EF /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				402AB5152B6817C5000713EF /* AppWebSocket.swift */,
+			);
+			path = WebSocket;
+			sourceTree = "<group>";
+		};
+		402AB5172B681959000713EF /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				402AB5182B68196A000713EF /* AppEnums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		402AB51A2B681BBD000713EF /* WebViewKit */ = {
+			isa = PBXGroup;
+			children = (
+				402AB52A2B682001000713EF /* Extension */,
+				402AB51B2B681BF9000713EF /* WebViewController.swift */,
+				402AB5202B681CE8000713EF /* WebViewPresenter.swift */,
+				402AB5262B681E93000713EF /* WebViewManager.swift */,
+			);
+			path = WebViewKit;
+			sourceTree = "<group>";
+		};
+		402AB51D2B681C31000713EF /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				402AB51E2B681C47000713EF /* BaseViewController.swift */,
+				402AB5222B681D05000713EF /* BasePresenter.swift */,
+				402AB5282B681EDE000713EF /* BaseViewManager.swift */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		402AB52A2B682001000713EF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				402AB52B2B68201C000713EF /* WebViewControllerUIExt.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		402AB52F2B6821FA000713EF /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				402AB5322B68221A000713EF /* DotComWebView.storyboard */,
+				402AB5312B68221A000713EF /* DotComWebViewController.swift */,
+				402AB5302B682219000713EF /* DotComWebViewManager.swift */,
+				402AB5332B68221A000713EF /* DotComWebViewPresenter.swift */,
+				402AB5382B6823B5000713EF /* Extensions */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		402AB5382B6823B5000713EF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				402AB5392B6823E4000713EF /* ChessDotComWebViewPresenter.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		402AB53B2B68257B000713EF /* Global Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				402AB53C2B682595000713EF /* UINavigationController.swift */,
+				402AB54D2B682EBA000713EF /* GlobalTypeAliases.swift */,
+				402AB54F2B682FA2000713EF /* WKScriptMessageExtension.swift */,
+				402AB5512B682FE3000713EF /* DictionaryExtension.swift */,
+				402AB5532B68303F000713EF /* CodableExtension.swift */,
+			);
+			path = "Global Extensions";
+			sourceTree = "<group>";
+		};
+		402AB5402B682A77000713EF /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				402AB5412B682A8E000713EF /* socketScript.js */,
+			);
+			path = Script;
+			sourceTree = "<group>";
+		};
+		402AB5432B682CF9000713EF /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				402AB5462B682DA4000713EF /* DotComManager */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		402AB5462B682DA4000713EF /* DotComManager */ = {
+			isa = PBXGroup;
+			children = (
+				402AB5472B682DB3000713EF /* Extensions */,
+				402AB5442B682D0F000713EF /* DotComManager.swift */,
+			);
+			path = DotComManager;
+			sourceTree = "<group>";
+		};
+		402AB5472B682DB3000713EF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				402AB5482B682DD6000713EF /* DotComManagerParseExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		402AB54A2B682E58000713EF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				402AB54B2B682E6B000713EF /* MonitorMsgEntity.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		AD72AEBE14FF0670BE3136FE /* Frameworks */ = {
@@ -277,6 +477,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				402AB4EB2B680550000713EF /* LaunchScreen.storyboard in Resources */,
+				402AB5362B68221A000713EF /* DotComWebView.storyboard in Resources */,
+				402AB5422B682A8E000713EF /* socketScript.js in Resources */,
 				402AB4E82B680550000713EF /* Assets.xcassets in Resources */,
 				402AB4E62B68054E000713EF /* Main.storyboard in Resources */,
 			);
@@ -389,9 +591,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402AB5542B68303F000713EF /* CodableExtension.swift in Sources */,
+				402AB5212B681CE8000713EF /* WebViewPresenter.swift in Sources */,
+				402AB5292B681EDE000713EF /* BaseViewManager.swift in Sources */,
+				402AB5372B68221A000713EF /* DotComWebViewPresenter.swift in Sources */,
+				402AB53A2B6823E4000713EF /* ChessDotComWebViewPresenter.swift in Sources */,
+				402AB5132B6816D3000713EF /* Utils.swift in Sources */,
+				402AB54E2B682EBA000713EF /* GlobalTypeAliases.swift in Sources */,
+				402AB52C2B68201C000713EF /* WebViewControllerUIExt.swift in Sources */,
+				402AB53D2B682595000713EF /* UINavigationController.swift in Sources */,
+				402AB5352B68221A000713EF /* DotComWebViewController.swift in Sources */,
+				402AB5162B6817C5000713EF /* AppWebSocket.swift in Sources */,
+				402AB5492B682DD6000713EF /* DotComManagerParseExt.swift in Sources */,
 				402AB4E32B68054E000713EF /* ViewController.swift in Sources */,
+				402AB5192B68196A000713EF /* AppEnums.swift in Sources */,
 				402AB4DF2B68054E000713EF /* AppDelegate.swift in Sources */,
+				402AB54C2B682E6B000713EF /* MonitorMsgEntity.swift in Sources */,
+				402AB51F2B681C47000713EF /* BaseViewController.swift in Sources */,
+				402AB5342B68221A000713EF /* DotComWebViewManager.swift in Sources */,
+				402AB5252B681DE4000713EF /* CookieUtils.swift in Sources */,
+				402AB5522B682FE3000713EF /* DictionaryExtension.swift in Sources */,
 				402AB4E12B68054E000713EF /* SceneDelegate.swift in Sources */,
+				402AB5102B681673000713EF /* WebServer.swift in Sources */,
+				402AB5502B682FA2000713EF /* WKScriptMessageExtension.swift in Sources */,
+				402AB5272B681E93000713EF /* WebViewManager.swift in Sources */,
+				402AB51C2B681BF9000713EF /* WebViewController.swift in Sources */,
+				402AB52E2B68207A000713EF /* GlobalConstants.swift in Sources */,
+				402AB5232B681D05000713EF /* BasePresenter.swift in Sources */,
+				402AB5452B682D0F000713EF /* DotComManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
