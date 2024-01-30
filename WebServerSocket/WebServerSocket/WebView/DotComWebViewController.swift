@@ -61,7 +61,6 @@ class DotComWebViewController: WebViewController {
     @discardableResult
     static func push(parentVC: BaseViewController?, url: String? = nil, script: String?) -> DotComWebViewController? {
         guard let url = url else { return nil }
-        guard let script = script else { return nil }
         guard let parentVC = parentVC else { return nil }
         guard let webViewController = DotComWebViewController.make() else { return nil }
         webViewController.url = url
@@ -73,9 +72,9 @@ class DotComWebViewController: WebViewController {
     }
     
     @discardableResult
-    static func pushForSocket(parentVC: BaseViewController?, script: String?) -> DotComWebViewController? {
-        AppWebSocket.shared.start()
-        let url = DotComUrl.chessDotComConnectUrl
+    static func pushForSocket(parentVC: BaseViewController?, url: String = DotComUrl.chessDotComConnectUrl, script: String?) -> DotComWebViewController? {
+        //AppWebSocket.shared.start()
+        //let url = DotComUrl.chessDotComConnectUrl
         //let url = "https://rsaxvc.net/tolu/scriptRunner.html"
         guard let parentVC = parentVC else { return nil }
         guard let webViewController = DotComWebViewController.make() else { return nil }
@@ -83,11 +82,22 @@ class DotComWebViewController: WebViewController {
         webViewController.pageTitle = ""
         webViewController.script = script
         webViewController.isUsingChessDotComSocket = true
+        let navController = UINavigationController(rootViewController: parentVC)
         parentVC.navigationController?.pushViewController(webViewController, animated: true, completion: {})
+//        parentVC.navigationController?.pushViewController(webViewController, animated: true, delay: 0.0, completion: {
+//            logDebugMessage(message: "")
+//        })
+        /*navController.navigationController?.pushViewController(webViewController, animated: true, delay: 0.0, completion: {
+            logDebugMessage(message: "")
+        })*/
         return webViewController
     }
     
-    func removeAllChessDotComMessageHandlers() {}
+    func removeAllChessDotComMessageHandlers() {
+        for handler in DotComSocketHandlers.allCases {
+            self.webView?.configuration.userContentController.removeScriptMessageHandler(forName: handler.title)
+        }
+    }
     
     deinit {
         logDebugMessage(message: "DeIniting ChessDotComWebViewController")

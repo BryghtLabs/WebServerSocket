@@ -15,6 +15,16 @@ protocol AppWebSocketProtocol: AnyObject {
     func socketError(socketError: Error?)
     func socketViabilityChanged(isViable: Bool)
     func socketBoardStatus(statusType: CDCStatusType)
+    func socketLog(log: String)
+}
+
+extension AppWebSocketProtocol {
+    func socketConnected(isConnected: Bool) {}
+    func socketRecievedText(socketText: String) {}
+    func socketError(socketError: Error?) {}
+    func socketViabilityChanged(isViable: Bool) {}
+    func socketBoardStatus(statusType: CDCStatusType) {}
+    func socketLog(log: String) {}
 }
 
 class AppWebSocket {
@@ -28,6 +38,8 @@ class AppWebSocket {
     var isConnected: Bool = false
     
     var socketHeaders: [String: String] = [String: String]()
+    
+    var isSocketOn: Bool = false
     
     weak var appWebSocketDelegate: AppWebSocketProtocol?
     
@@ -63,6 +75,7 @@ class AppWebSocket {
             //socket?.request.requiresDNSSECValidation = false
             socket?.delegate = self
             socket?.connect()
+            isSocketOn = true
         }
     }
     
@@ -77,6 +90,7 @@ class AppWebSocket {
     
     func stopSocket() {
         self.socket?.disconnect()
+        self.isSocketOn = false
     }
     
 }
@@ -113,18 +127,30 @@ extension AppWebSocket: WebSocketDelegate {
     
     private func handleConnection(headers: [String: String]) {
         self.isConnected = true
+        self.isSocketOn = true
         self.socketHeaders = headers
         self.appWebSocketDelegate?.socketConnected(isConnected: true)
+        
+        let connectionLog = "AppSocket Is Connected to App Server\n"
+        let headerLog = "AppSocket Headers: \(headers)\n"
+        self.appWebSocketDelegate?.socketLog(log: connectionLog)
+        self.appWebSocketDelegate?.socketLog(log: headerLog)
+        
         logDebugMessage(message: "CDCServer - CDCWS - WebSocket Is Now Connected")
         logDebugMessage(message: "CDCServer - CDCWS - WebSocket Headers: \(headers)")
     }
     
     private func handleDisConnection(reason: String? = nil, reasonCode: UInt16? = nil) {
         self.isConnected = false
+        self.isSocketOn = false
         self.appWebSocketDelegate?.socketConnected(isConnected: false)
         if let reason = reason, let reasonCode = reasonCode {
+            let disConnectLog = "WebSocket is disconnected because: \(reason) with code: \(reasonCode)\n"
+            self.appWebSocketDelegate?.socketLog(log: disConnectLog)
             logDebugError(message: "CDCServer - CDCWS - WebSocket is disconnected because: \(reason) with code: \(reasonCode)")
         } else {
+            let disConnectLog = "CDCServer - CDCWS - WebSocket Cancelled\n"
+            self.appWebSocketDelegate?.socketLog(log: disConnectLog)
             logDebugError(message: "CDCServer - CDCWS - WebSocket Cancelled")
         }
     }
@@ -135,19 +161,27 @@ extension AppWebSocket: WebSocketDelegate {
     }
     
     private func handleSocketPong(data: Data?) {
+        let pongLog = "WebSocket Pong: \(data ?? Data())\n"
+        self.appWebSocketDelegate?.socketLog(log: pongLog)
         logDebugMessage(message: "CDCServer - CDCWS - WebSocket Pong: \(data ?? Data())")
     }
     
     private func handleSocketPing(data: Data?) {
+        let pingLog = "WebSocket Ping: \(data ?? Data())\n"
+        self.appWebSocketDelegate?.socketLog(log: pingLog)
         logDebugMessage(message: "CDCServer - CDCWS - WebSocket Ping: \(data ?? Data())")
     }
     
     private func handleSocketError(socketError: Error?) {
+        let errorLog = "WebSocket Error \(String(describing: socketError))\n"
         self.appWebSocketDelegate?.socketError(socketError: socketError)
+        self.appWebSocketDelegate?.socketLog(log: errorLog)
         logDebugError(message: "CDCServer - CDCWS - WebSocket Error \(String(describing: socketError))")
     }
     
     private func handleSocketViabilityChanged(isViable: Bool) {
+        let viableLog = "WebSocket Viability Change: \(isViable)\n"
+        self.appWebSocketDelegate?.socketLog(log: viableLog)
         self.appWebSocketDelegate?.socketViabilityChanged(isViable: isViable)
         logDebugMessage(message: "CDCServer - CDCWS - WebSocket Viability Change: \(isViable)")
     }

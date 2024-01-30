@@ -95,3 +95,7 @@ struct DotComUrl {
     //static let chessDotComSocketUrl  = "ws://localhost:1999"
     //static let chessDotComSocketUrl  = "com.bryghtlab.ChessUpBeta://localhost:1999"
 }
+
+/*
+ "adding a root view controller <WebServerSocket.ViewController: 0x11000c600> as a child of view controller:<UINavigationController: 0x11285c000>"
+ */
