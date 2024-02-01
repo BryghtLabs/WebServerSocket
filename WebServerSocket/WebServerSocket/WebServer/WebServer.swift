@@ -46,15 +46,11 @@ class WebServer {
         self.cdcServer?.delegate = self
         self.cdcServer?.webSocketDelegate = self
         self.cdcServer?.webSocketConfig.pingInterval = 4
-        //self.cdcServer?.
-        
         //self.cdcServer?.serveBundle(.main, "/")
         
         self.cdcServer?.concurrency = 4
         
         do {
-            //let bundleUrl = Bundle.main.url(forResource: "ChessUpBeta", withExtension: nil)
-            //self.cdcServer?.serveDirectory(bundleUrl!, "/ChessUp")
             try self.cdcServer?.start(port: 1999, interface: "127.0.0.1")
             //try self.cdcServer?.start(port: 1999, interface: "localhost")
             self.isWebServerOn = true

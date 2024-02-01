@@ -57,8 +57,7 @@ class AppWebSocket {
     }
     
     private func startWebSocket() {
-        //let webSocketUrl = ContentfulSession.shared.chessUpDefaults?.chessDotComSocketUrl ?? ChessDotCom.chessDotComSocketUrl
-        let webSocketUrl = DotComUrl.chessDotComSocketUrl
+        let webSocketUrl = DotComUrl.socketUrl
         guard let socketUrl = URL(string: webSocketUrl) else { return }
         
         self.socketRequest = URLRequest(url: socketUrl)

@@ -1,5 +1,5 @@
 //
-//  ChessDotComWebViewPresenter.swift
+//  DotComWebViewPresenter.swift
 //  WebServerSocket
 //
 //  Created by Tolu Oridota on 1/29/24.

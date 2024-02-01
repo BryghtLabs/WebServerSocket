@@ -1,6 +1,6 @@
 //
 //  DotComWebViewController.swift
-//  ChessUp
+//  WebServerSocket
 //
 //  Created by Tolu Oridota on 3/5/22.
 //  Copyright © 2022 Bryght Labs. All rights reserved.
@@ -33,7 +33,6 @@ class DotComWebViewController: WebViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +42,8 @@ class DotComWebViewController: WebViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+        removeAllMessageHandlers()
+        DotComManager.shared.reset()
     }
     
     private func prepare() {
@@ -52,6 +53,10 @@ class DotComWebViewController: WebViewController {
     
     private func setUpDelegates() {
         self.viewManager?.setLoadCycleDelegate(presenter)
+    }
+    
+    func revealLogger() {
+        BottomSheetLogger.pushBottomSheet(parentVC: self)
     }
     
     static func make() -> DotComWebViewController? {
@@ -66,40 +71,30 @@ class DotComWebViewController: WebViewController {
         webViewController.url = url
         webViewController.pageTitle = ""
         webViewController.script = script
-        webViewController.isUsingChessDotComSocket = false
+        webViewController.isUsingDotComSocket = false
         parentVC.navigationController?.pushViewController(webViewController, animated: true, completion: {})
         return webViewController
     }
     
     @discardableResult
-    static func pushForSocket(parentVC: BaseViewController?, url: String = DotComUrl.chessDotComConnectUrl, script: String?) -> DotComWebViewController? {
-        //AppWebSocket.shared.start()
-        //let url = DotComUrl.chessDotComConnectUrl
-        //let url = "https://rsaxvc.net/tolu/scriptRunner.html"
+    static func pushForSocket(parentVC: BaseViewController?, url: String = DotComUrl.testHtml, script: String?) -> DotComWebViewController? {
         guard let parentVC = parentVC else { return nil }
         guard let webViewController = DotComWebViewController.make() else { return nil }
         webViewController.url = url
         webViewController.pageTitle = ""
         webViewController.script = script
-        webViewController.isUsingChessDotComSocket = true
-        let navController = UINavigationController(rootViewController: parentVC)
+        webViewController.isUsingDotComSocket = true
         parentVC.navigationController?.pushViewController(webViewController, animated: true, completion: {})
-//        parentVC.navigationController?.pushViewController(webViewController, animated: true, delay: 0.0, completion: {
-//            logDebugMessage(message: "")
-//        })
-        /*navController.navigationController?.pushViewController(webViewController, animated: true, delay: 0.0, completion: {
-            logDebugMessage(message: "")
-        })*/
         return webViewController
     }
     
-    func removeAllChessDotComMessageHandlers() {
+    func removeAllMessageHandlers() {
         for handler in DotComSocketHandlers.allCases {
             self.webView?.configuration.userContentController.removeScriptMessageHandler(forName: handler.title)
         }
     }
     
     deinit {
-        logDebugMessage(message: "DeIniting ChessDotComWebViewController")
+        logDebugMessage(message: "DeIniting DotComWebViewController")
     }
 }

@@ -38,7 +38,7 @@ class ViewController: BaseViewController {
             globalMainQueue.async {
                 self.logTxtView.text = self.currentLogTxt
                 let stringLength = self.currentLogTxt.count
-                self.logTxtView.scrollRangeToVisible(NSMakeRange(stringLength-1, 0))
+                self.logTxtView.scrollRangeToVisible(NSMakeRange((stringLength - 1), 0))
             }
         }
     }
@@ -53,11 +53,7 @@ class ViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setRootNavController()
-        setupDelegates()
-        setupTxtView()
-        setupURLTxtField()
-        initiateWebServerSocket()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,14 +61,22 @@ class ViewController: BaseViewController {
         setSwitches()
     }
     
-    private func setRootNavController() {
-        let navController = UINavigationController(rootViewController: self)
-        UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController = navController
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupDelegates()
+        setupTxtView()
+        setupURLTxtField()
+        initiateWebServerSocket()
+    }
+    
+    static func make() -> ViewController? {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main") as? ViewController
     }
     
     private func setupURLTxtField() {
         self.urlTxtField.inputAccessoryView = self.keyboardDoneToolbar
         self.urlTxtField.delegate = self
+        self.urlTxtField.text = DotComUrl.testHtml
     }
     
     private func setupTxtView() {
@@ -162,7 +166,7 @@ class ViewController: BaseViewController {
     }
     
     private func loadUrlWithScript(url: String) {
-        guard let script = Utils.getChessDotComSocketJavascript() else { return }
+        guard let script = Utils.getSocketJavascript() else { return }
         DotComWebViewController.pushForSocket(parentVC: self, url: url, script: script)
     }
     

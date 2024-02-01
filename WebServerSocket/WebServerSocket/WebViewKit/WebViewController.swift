@@ -27,7 +27,7 @@ class WebViewController: BaseViewController {
     
     var webConfig: WKWebViewConfiguration?
     
-    var isUsingChessDotComSocket: Bool = false
+    var isUsingDotComSocket: Bool = false
     
     var presenter: WebViewPresenter? {
         return presenterObject as? WebViewPresenter
@@ -70,9 +70,13 @@ class WebViewController: BaseViewController {
     }
     
     func createSocketWebView() {
-        guard let config = webConfig else { return }
+        //guard let config = webConfig else { return }
         let customFrame = CGRect(origin: CGPoint.zero, size: CGSize(width: 0.0, height:view.frame.size.height))
-        webView = WKWebView(frame: customFrame, configuration: config)
+        
+        if let config = webConfig {
+            webView = WKWebView(frame: customFrame, configuration: config)
+        }
+        
         //webView = WKWebView(frame: customFrame)
         webView?.translatesAutoresizingMaskIntoConstraints = false
         webView?.customUserAgent = AppConstants.CustomUserAgent
@@ -143,21 +147,11 @@ class WebViewController: BaseViewController {
     
     @objc func reload() {
         guard let webView = webView else { return }
-        /*guard ChessSession.shared.chessGameConfig.isChessGameInPlay == false,
-              ChessSession.shared.chessGameConfig.chessPlayMode == .PlayChessDotCom else {
-            useReloadToRequestCurrentGameState()
-            return
-        }*/
         webView.reload()
     }
     
-    func useReloadToRestartChessDotComLiveGameMonitor() {
-        //ChessDotComManager.shared.restartLiveGameMonitor()
-    }
-    
     func useReloadToRequestCurrentGameState() {
-        guard isUsingChessDotComSocket == false else { return }
-        //ChessDotComManager.shared.requestCurrentGameState()
+        guard isUsingDotComSocket == false else { return }
     }
     
     func displayConnectionError() {
@@ -167,7 +161,7 @@ class WebViewController: BaseViewController {
     }
     
     func handleWebViewDidFinish(webView: WKWebView) {
-        guard isUsingChessDotComSocket == false else { return }
+        guard isUsingDotComSocket == false else { return }
         guard self.canEvaluateScripts else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             if let script = self.evaluateScript {

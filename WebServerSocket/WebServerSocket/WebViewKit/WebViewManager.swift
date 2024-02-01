@@ -26,7 +26,7 @@ class WebViewManager: BaseViewManagers, WKNavigationDelegate {
     
     let WEB_CANCEL_BUTTON_PRESSED_URL = "wrong://home?"
     let EXPIRED_SESSION_URL = "logout"
-    let ChessDotComUrl = "chess.com"
+    let DotComUrl = "gmail.com"
     
     var viewController: WebViewController? {
         return viewControllerObject as? WebViewController
@@ -103,7 +103,7 @@ class WebViewManager: BaseViewManagers, WKNavigationDelegate {
     
     public func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let url = navigationAction.request.url?.absoluteString else { return decisionHandler(.cancel) }
-        self.processChessDotComLogOut(url: url)
+        self.processDotComLogOut(url: url)
         self.currentNavigationType = (navigationAction.navigationType == .formSubmitted) ? .formSubmitted : .other
         self.loadCycleDelegate?.webViewDecidedForPolicy(navigationAction: navigationAction)
         
@@ -115,9 +115,9 @@ class WebViewManager: BaseViewManagers, WKNavigationDelegate {
 
 extension WebViewManager {
     
-    private func processChessDotComLogOut(url: String) {
-        guard viewController?.isUsingChessDotComSocket == false else { return }
-        guard url.contains(EXPIRED_SESSION_URL) && url.contains(ChessDotComUrl) else { return }
+    private func processDotComLogOut(url: String) {
+        guard viewController?.isUsingDotComSocket == false else { return }
+        guard url.contains(EXPIRED_SESSION_URL) && url.contains(DotComUrl) else { return }
     }
     
 }

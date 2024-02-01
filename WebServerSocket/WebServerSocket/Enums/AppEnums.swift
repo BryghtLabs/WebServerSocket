@@ -87,15 +87,47 @@ enum DotComSocketHandlers: Int, Codable, CaseIterable {
     
 }
 
-struct DotComUrl {
-    static let url = "https://www.chess.com"
-    static let chessDotComConnectUrl = "https://www.chess.com/play/online/connected-board"
-    //static let chessDotComSocketUrl  = "wss://socketsbay.com/wss/v2/1/demo/"
-    static let chessDotComSocketUrl  = "ws://127.0.0.1:1999"
-    //static let chessDotComSocketUrl  = "ws://localhost:1999"
-    //static let chessDotComSocketUrl  = "com.bryghtlab.ChessUpBeta://localhost:1999"
+enum ScreenHeight: Int, Codable, CaseIterable {
+    case Large
+    case Medium
+    case Small
 }
 
-/*
- "adding a root view controller <WebServerSocket.ViewController: 0x11000c600> as a child of view controller:<UINavigationController: 0x11285c000>"
- */
+enum ScreenWidth: Int, Codable, CaseIterable {
+    case Large
+    case Medium
+    case Small
+}
+
+enum PrecisionScreenWidth: Int, Codable, CaseIterable {
+    case Small
+    case Medium
+    case Large
+    case ExtraLarge
+    case ExtraXLarge
+}
+
+enum IPadScreenWidth: Int, Codable, CaseIterable {
+    case Mini
+    case Small
+    case Medium
+    case Large
+    case ExtraLarge
+}
+
+enum IPadScreenHeight: Int, Codable, CaseIterable {
+    case Mini
+    case Small
+    case Medium
+    case Large
+    case ExtraLarge
+}
+
+public enum DeviceHardwareType: Int, CaseIterable  {
+    case iPhone
+    case iPad
+    case tvOS
+    case carPlay
+    case mac
+    case none
+}

@@ -1,6 +1,6 @@
 //
 //  DotComWebViewManager.swift
-//  ChessUp
+//  WebServerSocket
 //
 //  Created by Tolu Oridota on 8/2/23.
 //  Copyright © 2023 Bryght Labs. All rights reserved.

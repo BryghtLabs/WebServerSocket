@@ -17,8 +17,7 @@ extension WebViewController: WKUIDelegate {
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
             completionHandler()
         }))
-        
-        present(alertController, animated: true, completion: nil)
+        self.topVC?.present(alertController, animated: true, completion: nil)
     }
     
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
@@ -32,7 +31,7 @@ extension WebViewController: WKUIDelegate {
             completionHandler(false)
         }))
         
-        present(alertController, animated: true, completion: nil)
+        self.topVC?.present(alertController, animated: true, completion: nil)
     }
     
     

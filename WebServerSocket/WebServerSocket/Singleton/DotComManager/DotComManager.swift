@@ -17,6 +17,8 @@ class DotComManager: NSObject {
     
     var dotComVC: DotComWebViewController?
     
+    var currentLogText: String = ""
+    
     weak var dotComManagerDelegate: DotComManagerProtocol?
     
     static var shared: DotComManager = DotComManager()

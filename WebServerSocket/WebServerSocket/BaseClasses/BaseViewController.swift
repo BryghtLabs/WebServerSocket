@@ -16,6 +16,12 @@ class BaseViewController: UIViewController {
     
     var currentActiveTextField: UITextField?
     
+    /// Returns the Top most viewController on the stack.
+    var topVC: BaseViewController? {
+        guard let topVC = UIApplication.topViewController(), let vc = topVC as? BaseViewController else { return nil }
+        return vc
+    }
+    
     lazy var keyboardDoneToolbar: UIToolbar = {
         let toolbar = UIToolbar(frame: .init(x: 0, y: 0, width: 320, height: 44))
         let flexible = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)

@@ -44,6 +44,11 @@
 		402AB5502B682FA2000713EF /* WKScriptMessageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB54F2B682FA2000713EF /* WKScriptMessageExtension.swift */; };
 		402AB5522B682FE3000713EF /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5512B682FE3000713EF /* DictionaryExtension.swift */; };
 		402AB5542B68303F000713EF /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402AB5532B68303F000713EF /* CodableExtension.swift */; };
+		40CDDB362B699DE90027FC79 /* LaunchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB352B699DE90027FC79 /* LaunchApp.swift */; };
+		40CDDB3A2B69B0230027FC79 /* BottomSheetLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB382B69B0230027FC79 /* BottomSheetLogger.swift */; };
+		40CDDB3B2B69B0230027FC79 /* BottomSheetLogger.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CDDB392B69B0230027FC79 /* BottomSheetLogger.storyboard */; };
+		40CDDB3D2B69B1FC0027FC79 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB3C2B69B1FC0027FC79 /* UIScreenExtension.swift */; };
+		40CDDB3F2B69BB3F0027FC79 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CDDB3E2B69BB3F0027FC79 /* UIApplicationExtension.swift */; };
 		4DA052F2F1DE826E97ADB3EF /* libPods-WebServerSocketUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 930B721217FB3C7CF54239E4 /* libPods-WebServerSocketUITests.a */; };
 		EE340E8E8333AE35D5D979CD /* Pods_WebServerSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F271169486CE23203ED256 /* Pods_WebServerSocket.framework */; };
 /* End PBXBuildFile section */
@@ -108,6 +113,11 @@
 		402AB54F2B682FA2000713EF /* WKScriptMessageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKScriptMessageExtension.swift; sourceTree = "<group>"; };
 		402AB5512B682FE3000713EF /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		402AB5532B68303F000713EF /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
+		40CDDB352B699DE90027FC79 /* LaunchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchApp.swift; sourceTree = "<group>"; };
+		40CDDB382B69B0230027FC79 /* BottomSheetLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetLogger.swift; sourceTree = "<group>"; };
+		40CDDB392B69B0230027FC79 /* BottomSheetLogger.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BottomSheetLogger.storyboard; sourceTree = "<group>"; };
+		40CDDB3C2B69B1FC0027FC79 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
+		40CDDB3E2B69BB3F0027FC79 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		73F271169486CE23203ED256 /* Pods_WebServerSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebServerSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89394E7C7FE0E7BD21460ED6 /* libPods-WebServerSocketTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebServerSocketTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBB799CECC54ADA1773427F /* Pods-WebServerSocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebServerSocket.debug.xcconfig"; path = "Target Support Files/Pods-WebServerSocket/Pods-WebServerSocket.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +193,8 @@
 		402AB4DD2B68054E000713EF /* WebServerSocket */ = {
 			isa = PBXGroup;
 			children = (
+				40CDDB372B69B0070027FC79 /* BottomSheet Logger */,
+				40CDDB342B699DD70027FC79 /* Launch */,
 				402AB54A2B682E58000713EF /* Entities */,
 				402AB5432B682CF9000713EF /* Singleton */,
 				402AB5402B682A77000713EF /* Script */,
@@ -313,6 +325,8 @@
 				402AB54F2B682FA2000713EF /* WKScriptMessageExtension.swift */,
 				402AB5512B682FE3000713EF /* DictionaryExtension.swift */,
 				402AB5532B68303F000713EF /* CodableExtension.swift */,
+				40CDDB3C2B69B1FC0027FC79 /* UIScreenExtension.swift */,
+				40CDDB3E2B69BB3F0027FC79 /* UIApplicationExtension.swift */,
 			);
 			path = "Global Extensions";
 			sourceTree = "<group>";
@@ -356,6 +370,23 @@
 				402AB54B2B682E6B000713EF /* MonitorMsgEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		40CDDB342B699DD70027FC79 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				40CDDB352B699DE90027FC79 /* LaunchApp.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		40CDDB372B69B0070027FC79 /* BottomSheet Logger */ = {
+			isa = PBXGroup;
+			children = (
+				40CDDB392B69B0230027FC79 /* BottomSheetLogger.storyboard */,
+				40CDDB382B69B0230027FC79 /* BottomSheetLogger.swift */,
+			);
+			path = "BottomSheet Logger";
 			sourceTree = "<group>";
 		};
 		AD72AEBE14FF0670BE3136FE /* Frameworks */ = {
@@ -477,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				402AB4EB2B680550000713EF /* LaunchScreen.storyboard in Resources */,
+				40CDDB3B2B69B0230027FC79 /* BottomSheetLogger.storyboard in Resources */,
 				402AB5362B68221A000713EF /* DotComWebView.storyboard in Resources */,
 				402AB5422B682A8E000713EF /* socketScript.js in Resources */,
 				402AB4E82B680550000713EF /* Assets.xcassets in Resources */,
@@ -591,14 +623,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40CDDB3A2B69B0230027FC79 /* BottomSheetLogger.swift in Sources */,
 				402AB5542B68303F000713EF /* CodableExtension.swift in Sources */,
 				402AB5212B681CE8000713EF /* WebViewPresenter.swift in Sources */,
 				402AB5292B681EDE000713EF /* BaseViewManager.swift in Sources */,
+				40CDDB3D2B69B1FC0027FC79 /* UIScreenExtension.swift in Sources */,
 				402AB5372B68221A000713EF /* DotComWebViewPresenter.swift in Sources */,
+				40CDDB3F2B69BB3F0027FC79 /* UIApplicationExtension.swift in Sources */,
 				402AB53A2B6823E4000713EF /* ChessDotComWebViewPresenter.swift in Sources */,
 				402AB5132B6816D3000713EF /* Utils.swift in Sources */,
 				402AB54E2B682EBA000713EF /* GlobalTypeAliases.swift in Sources */,
 				402AB52C2B68201C000713EF /* WebViewControllerUIExt.swift in Sources */,
+				40CDDB362B699DE90027FC79 /* LaunchApp.swift in Sources */,
 				402AB53D2B682595000713EF /* UINavigationController.swift in Sources */,
 				402AB5352B68221A000713EF /* DotComWebViewController.swift in Sources */,
 				402AB5162B6817C5000713EF /* AppWebSocket.swift in Sources */,

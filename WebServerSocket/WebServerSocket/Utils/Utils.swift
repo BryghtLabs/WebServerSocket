@@ -36,6 +36,16 @@ class Utils {
         return String(format: "%f", Date().timeIntervalSince1970)
     }
     
+    /// Get Key Window
+    /// - Returns: UIWindow
+    class func getKeyWindow() -> UIWindow? {
+        return UIApplication.shared.connectedScenes
+            .filter({$0.activationState == .foregroundActive})
+            .compactMap({$0 as? UIWindowScene})
+            .first?.windows
+            .filter({$0.isKeyWindow}).first
+    }
+    
     /// Returns timeStamp in "yyyy-MM-dd'T'HH:mm:ssZ" format
     /// - Returns: String
     class func debugLogTimeStamp() -> String {
@@ -55,7 +65,7 @@ class Utils {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
     
-    class func getChessDotComSocketJavascript() -> String? {
+    class func getSocketJavascript() -> String? {
         guard let scriptPath = Bundle.main.path(forResource: "socketScript", ofType: AppConstants.extJS, inDirectory: "") else { return nil }
         
         guard let javaScriptString = try? String(contentsOfFile: scriptPath) else { return nil }

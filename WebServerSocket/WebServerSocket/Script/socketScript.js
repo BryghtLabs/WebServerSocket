@@ -1,19 +1,16 @@
 /**
  socketScript.js
- ChessUp
- Created by SocketBandit Oridota on 11/30/2023
+ WebServerSocket
+ Created by Tolu Oridota on 11/30/2023
  Copyright © 2023 Bryght Labs. All rights reserved.
  */
 
 try {
     
     let socket = new WebSocket("ws://127.0.0.1:1999", "SocketBandit");
-    //let socket = new WebSocket("com.bryghtlab.ChessUpBeta://localhost", "SocketBandit");
-    //let socket
     
     function startSocket() {
         socket = new WebSocket("ws://127.0.0.1:1999", "SocketBandit");
-        //socket = new WebSocket("com.bryghtlab.ChessUpBeta://localhost", "SocketBandit");
     }
     
     socket.onopen = function(e) {
