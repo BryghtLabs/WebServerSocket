@@ -65,6 +65,7 @@ class DotComWebViewPresenter: WebViewPresenter {
         }
         
         config.userContentController = userContentController
+        config.defaultWebpagePreferences.allowsContentJavaScript = true
         
         if let script = self.viewController?.script {
             // Inject JavaScript into the webpage. You can specify when your script will be injected and for
